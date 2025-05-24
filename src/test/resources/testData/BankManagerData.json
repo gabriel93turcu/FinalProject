@@ -1,0 +1,16 @@
+{
+  "firstName": "Gabriel",
+  "lastName": "Tester",
+  "postCode": "123456",
+  "customerId": "",
+  "accounts": [
+    {
+      "accountId": "",
+      "currency": "Dollar"
+    },
+    {
+      "accountId": "",
+      "currency": "Pound"
+    }
+  ]
+}

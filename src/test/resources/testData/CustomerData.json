@@ -1,0 +1,24 @@
+{
+  "fullName": "Gabriel Tester",
+  "accounts": [
+    {
+      "accountId": "",
+      "currency": "Dollar",
+      "transactions": [
+        {
+          "type": "Deposit",
+          "amount": "500",
+          "message": "Deposit Successful",
+          "validateType": "Credit"
+        },
+        {
+          "type": "Withdrawl",
+          "amount": "200",
+          "message": "Transaction successful",
+          "validateType": "Debit"
+        }
+      ],
+      "balance": 0
+    }
+  ]
+}
