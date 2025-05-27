@@ -1,12 +1,7 @@
 package modelObject;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 
 @Getter
 @Setter

@@ -14,7 +14,7 @@ public class BankManagerLoginTest extends SharedData {
 
     @Test (groups = {TestSuite.REGRESSION_SUITE, TestSuite.BANK_MANAGER_SUITE,
             TestCaseSuite.TICKET_123,TestCaseSuite.TC_457, TestCaseSuite.TC_459})
-    public void createBankManagerAccount() throws InterruptedException {
+    public void createBankManagerAccount() {
 
         BankManagerModel testBankManagerData = new BankManagerModel("src/test/resources/testData/BankManagerData.json");
         CustomerModel testCustomerData = new CustomerModel("src/test/resources/testData/CustomerData.json");
@@ -68,10 +68,10 @@ public class BankManagerLoginTest extends SharedData {
 
         customerPage.transactionsButton();
 
-//        CustomerAccountModel account = testCustomerData.getAccounts().get(0);
-//        CustomerTransactionModel firstTransaction = account.getTransactions().get(0);
-//        CustomerTransactionModel secondTransaction = account.getTransactions().get(1);
-//        customerPage.validateFirstTransaction(firstTransaction);
-//        customerPage.validateSecondTransaction(secondTransaction);
+        CustomerAccountModel account = testCustomerData.getAccounts().get(0);
+        CustomerTransactionModel firstTransaction = account.getTransactions().get(0);
+        CustomerTransactionModel secondTransaction = account.getTransactions().get(1);
+        customerPage.validateFirstTransaction(firstTransaction);
+        customerPage.validateSecondTransaction(secondTransaction);
     }
 }

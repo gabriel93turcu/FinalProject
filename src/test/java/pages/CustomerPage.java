@@ -55,6 +55,7 @@ public class CustomerPage extends BasePage {
         addAmountDepositValue(transactionData);
         submitDepositTransaction();
         validateMessage(transactionData);
+        elementHelper.waitFor(1500);
     }
 
     public void clickOnWithdrawlButton() {
@@ -77,9 +78,11 @@ public class CustomerPage extends BasePage {
         addAmountWithdrawValue(transactionData);
         submitWithdrawTransaction();
         validateMessage(transactionData);
+        elementHelper.waitFor(1500);
     }
 
     public void transactionsButton() {
+        elementHelper.waitFor(5000);
         elementHelper.clickJSLocator(CustomerLocators.transactionsButtonElement);
         LoggerUtility.infoLog("The user clicks on Transactions Button");
     }

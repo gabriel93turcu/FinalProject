@@ -104,4 +104,12 @@ public class ElementHelper {
         customerDropdown.selectByIndex(index);
     }
 
+    public void waitFor(int value){
+        try {
+            Thread.sleep(value);
+        } catch (InterruptedException ignored) {
+
+        }
+    }
+
 }
