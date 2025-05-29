@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 import pages.BankManagerPage;
 import pages.CustomerPage;
 import pages.LoginPage;
-import sharedData.SharedData;
+import sharedData.Hooks;
 import suites.TestCaseSuite;
 import suites.TestSuite;
 
-public class BankManagerLoginTest extends SharedData {
+public class BankManagerLoginTest extends Hooks {
 
     @Test (groups = {TestSuite.REGRESSION_SUITE, TestSuite.BANK_MANAGER_SUITE,
             TestCaseSuite.TICKET_123,TestCaseSuite.TC_457, TestCaseSuite.TC_459})

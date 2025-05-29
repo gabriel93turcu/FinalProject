@@ -39,3 +39,15 @@ jobs:
         
     - name: Run Automation Tests
       run: mvn clean install -Dcicd=true -Dgroups=${{ github.event.inputs.suite }} -Dthreads=${{ github.event.inputs.workers }}
+
+    - name: Generate Allure Report with Maven
+      run: mvn allure:report
+
+    - name: Archive Allure Report
+      run: zip -r target/allure-report.zip target/allure-report
+
+    - name: Upload Allure Report as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-report
+        path: target/allure-report.zip

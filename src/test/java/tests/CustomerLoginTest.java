@@ -1,7 +1,7 @@
 package tests;
 
-import sharedData.SharedData;
+import sharedData.Hooks;
 
-public class CustomerLoginTest extends SharedData {
+public class CustomerLoginTest extends Hooks {
 
 }

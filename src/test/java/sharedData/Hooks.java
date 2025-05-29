@@ -1,5 +1,6 @@
 package sharedData;
 
+import allureUtility.AllureCleaner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
@@ -7,12 +8,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
 
-public class SharedData {
+public class Hooks {
     private WebDriver driver;
     private String testName;
+
+    @BeforeSuite(alwaysRun = true)
+    public void prepareSuite(){
+        AllureCleaner.deleteFolder();
+    }
 
     @BeforeMethod (alwaysRun = true)
     public void prepareEnvironment() {
@@ -43,7 +50,7 @@ public class SharedData {
 
     @AfterMethod (alwaysRun = true)
     public void clearEnvironment() {
-//        driver.quit();
+        driver.quit();
         LoggerUtility.finishTest(testName);
     }
 
