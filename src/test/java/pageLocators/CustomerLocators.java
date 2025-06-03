@@ -11,7 +11,7 @@ public class CustomerLocators {
     public static final By accountNumberInCustomerAccountElement = By.cssSelector(".center > .ng-binding:nth-child(1)");
     public static final By balanceValueInCurrentAccountElement = By.cssSelector(".center > .ng-binding:nth-child(2)");
     public static final By currencyInCurrentAccountElement = By.cssSelector(".center > .ng-binding:nth-child(3)");
-    public static final By transactionsButtonElement = By.cssSelector("[ng-click=\"transactions()\"]");
+    public static final By transactionsButtonElement = By.cssSelector("button[ng-click=\"transactions()\"]");
     public static final By amountOfFirstTransaction = By.cssSelector("#anchor0 .ng-binding:nth-child(2)");
     public static final By transactionTypeOfFirstTransaction = By.cssSelector("#anchor0 .ng-binding:nth-child(3)");
     public static final By amountOfSecondTransaction = By.cssSelector("#anchor1 .ng-binding:nth-child(2)");
