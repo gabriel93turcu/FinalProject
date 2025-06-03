@@ -19,4 +19,8 @@ public class LoggerUtility {
         logger.info(message);
     }
 
+    public static void errorLog(String message) {
+        logger.error(message);
+    }
+
 }

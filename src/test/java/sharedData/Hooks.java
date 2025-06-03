@@ -1,11 +1,12 @@
 package sharedData;
 
 import allureUtility.AllureCleaner;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITest;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -25,8 +26,6 @@ public class Hooks {
     public void prepareEnvironment() {
         //găsim numele clasei
         testName = this.getClass().getSimpleName();
-
-        WebDriverManager.chromedriver().setup();
 
         String remoteEnv = System.getProperty("cicd");
         if(Boolean.parseBoolean(remoteEnv)){
@@ -49,7 +48,10 @@ public class Hooks {
     }
 
     @AfterMethod (alwaysRun = true)
-    public void clearEnvironment() {
+    public void clearEnvironment(ITestResult result) {
+        if (!result.isSuccess()) {
+            LoggerUtility.errorLog(result.getThrowable().getMessage());
+        }
         driver.quit();
         LoggerUtility.finishTest(testName);
     }
